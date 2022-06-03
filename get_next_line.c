@@ -82,14 +82,11 @@ char	*get_next_line(int fd)
 	{
 		len = read(fd, buf, BUFFER_SIZE);
 		if (len == -1)
-		{
-			free(buf);
 			return (NULL);
-		}
 		buf[len] = 0;
 		save = ft_join_and_free(save, buf);
 		if (ft_strchr(buf, '\n'))
-			break ;
+			break;
 	}
 	free(buf);
 	if (!save)
@@ -101,28 +98,8 @@ char	*get_next_line(int fd)
 
 char	*ft_test(int fd, char *buf)
 {
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	buf = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	return (buf);
-}
-
-
-int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("hello", O_RDONLY);
-	line = get_next_line(fd);
-	printf("%s", line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	return (0);
 }
