@@ -28,13 +28,13 @@ char	*ft_next_line(char *buffer)
 	char	*line;
 
 	i = 0;
+	while (buffer[i] && buffer[i] != '\n')
+		i++;
 	if (!buffer[i])
 	{
 		free(buffer);
 		return (NULL);
 	}
-	while (buffer[i] && buffer[i] != '\n')
-		i++;
 	line = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
 	i++;
 	j = 0;
@@ -76,7 +76,7 @@ char	*get_next_line(int fd)
 
 	if (!save)
 		save = ft_calloc(1, 1);
-	buf = ft_test(fd, save);
+	buf = ft_test(fd);
 	len = 1;
 	while (len > 0)
 	{
@@ -96,8 +96,10 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-char	*ft_test(int fd, char *buf)
+char	*ft_test(int fd)
 {
+	char *buf;
+
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	buf = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
