@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utiles.c                             :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:51:56 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/03/21 10:51:57 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:21:31 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,6 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*room;
-
-	room = (void *)malloc(size * count);
-	if (room != NULL)
-		ft_bzero(room, size * count);
-	return (room);
-}
-
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -46,7 +36,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*f;
 	size_t	i;
@@ -69,6 +59,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	f[i] = '\0';
+	//free (s1);
 	return (f);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:51:26 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/03/21 10:51:28 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:19:18 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
-#  ifndef BUFFER_SIZE
-#   define BUFFER_SIZE 1
-#  endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *string, int searchedChar );
 char	*ft_test(int fd);
 
