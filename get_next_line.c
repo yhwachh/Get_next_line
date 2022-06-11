@@ -19,6 +19,7 @@ char	*ft_next_line(char *buffer)
 	char	*line;
 
 	i = 0;
+	j = 0;
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
 	if (!buffer[i])
@@ -30,7 +31,6 @@ char	*ft_next_line(char *buffer)
 	if (!line)
 		return (NULL);
 	i++;
-	j = 0;
 	while (buffer[i])
 		line[j++] = buffer[i++];
 	line[j] = '\0';
@@ -96,15 +96,15 @@ char	*ft_read(int fd, char *str)
 }
 char	*get_next_line(int fd)
 {
-	static char	*save;
+	static char	*str;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (0);
-	save = ft_read(fd, save);
-	if (!save)
+	str = ft_read(fd, str);
+	if (!str)
 		return (NULL);
-	line = ft_line(save);
-	save = ft_next_line(save);
+	line = ft_line(str);
+	str = ft_next_line(str);
 	return (line);
 }
