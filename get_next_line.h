@@ -6,7 +6,7 @@
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:51:26 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/06/09 15:19:18 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/06/23 11:43:57 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char  *s1, char  *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *string, int searchedChar);
 char	*ft_test(int fd);
 

@@ -6,7 +6,7 @@
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:51:14 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/06/09 15:15:53 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/06/23 11:45:07 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_line(char *buffer)
 	while (buffer[i] && buffer[i] != '\n')
 		++i;
 	line = (char *)malloc(sizeof(char) * (i + 2));
-	if(!line)
+	if (!line)
 		return (NULL);
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
@@ -94,6 +94,7 @@ char	*ft_read(int fd, char *str)
 	free (temp);
 	return (str);
 }
+
 char	*get_next_line(int fd)
 {
 	static char	*str;

@@ -6,7 +6,7 @@
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:51:56 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/06/09 15:21:31 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/06/23 11:48:11 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,30 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char    *ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-    char	*dst;
-    int		i;
-    int		k;
+	char	*dst;
+	int		i;
+	int		k;
 
-    if (!s1)
-    {
-        s1 = (char *)malloc(sizeof(char) * 1);
-        s1[0] = '\0';
-    }
-    i = 0;
-    k = 0;
-    dst = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-    if (!dst)
-        return (NULL);
-    while (s1[i] != '\0')
-        dst[k++] = s1[i++];
-    i = 0;
-    while (s2[i] != '\0')
-        dst[k++] = s2[i++];
-    dst[k] = '\0';
-    free (s1);
-    return (dst);
+	if (!s1)
+	{
+		s1 = (char *)malloc(sizeof(char) * 1);
+		s1[0] = '\0';
+	}
+	i = 0;
+	k = 0;
+	dst = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!dst)
+		return (NULL);
+	while (s1[i] != '\0')
+		dst[k++] = s1[i++];
+	i = 0;
+	while (s2[i] != '\0')
+		dst[k++] = s2[i++];
+	dst[k] = '\0';
+	free (s1);
+	return (dst);
 }
 
 char	*ft_strchr(const char *s, int c)
